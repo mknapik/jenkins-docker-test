@@ -9,3 +9,14 @@ node('docker') {
         }
     }
 }
+
+node('docker') {
+    withCleanup {
+        checkout scm
+
+        withDockerCompose { compose ->
+            compose.exec('app', 'bundle exec rake --version')
+            compose.exec('app', 'bundle exec rake')
+        }
+    }
+}
