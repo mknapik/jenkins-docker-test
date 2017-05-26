@@ -5,6 +5,7 @@ node('docker') {
         def myEnv = docker.build 'jenkins-docker-test:latest'
         myEnv.inside {
            sh 'bundle exec rake --version'
+           sh 'bundle exec rake'
         }
     }
 }

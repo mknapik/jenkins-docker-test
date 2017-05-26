@@ -10,4 +10,4 @@ COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
 RUN bundle install
 
-# COPY . /usr/src/app
+COPY . /usr/src/app
