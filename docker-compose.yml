@@ -2,4 +2,4 @@ version: '2'
 services:
   app:
     build: .
-    command: bundle exec rake --version
+    command: /sbin/init
